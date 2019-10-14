@@ -17,5 +17,6 @@ gdown.pl https://drive.google.com/file/d/1q_aPle66MYN_5xnSkZAvJBROd_lKTr1M/edit 
 
 
 parameters used would be the spades.py -k 21,51,71,91,111,127 --careful --pe1-1 from De novo assembly 2
+if you go to the spades manual it will give you all of the parameters that we use
 
 download angola 27
