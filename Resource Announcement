@@ -13,3 +13,9 @@ gdown.pl https://drive.google.com/file/d/1HJFsbJ7urNxN4TNyi44j5cJFpLF7MT-k/edit 
 
 
 gdown.pl https://drive.google.com/file/d/1q_aPle66MYN_5xnSkZAvJBROd_lKTr1M/edit DG33_S9_L001_R2.fastq.gz
+
+
+
+parameters used would be the spades.py -k 21,51,71,91,111,127 --careful --pe1-1 from De novo assembly 2
+
+download angola 27
