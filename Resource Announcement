@@ -1,14 +1,12 @@
-# Download the Data of the Files
+Download the Data of the Files
 
-##DG33_S9_L001_R1_001.fastq
+DG33_S9_L001_R1_001.fastq
 
-https://drive.google.com/open?id=1HJFsbJ7urNxN4TNyi44j5cJFpLF7MT-k
+shareable link=https://drive.google.com/open?id=1HJFsbJ7urNxN4TNyi44j5cJFpLF7MT-k
 
-##DG33_S9_L001_R2_001.fastq
+DG33_S9_L001_R2_001.fastq
 
-https://drive.google.com/open?id=1q_aPle66MYN_5xnSkZAvJBROd_lKTr1M
-
-
+shareable link=https://drive.google.com/open?id=1q_aPle66MYN_5xnSkZAvJBROd_lKTr1M
 
 
 gdown.pl https://drive.google.com/file/d/1HJFsbJ7urNxN4TNyi44j5cJFpLF7MT-k/edit DG33_S9_L001_R1.fastq.gz
@@ -16,9 +14,40 @@ gdown.pl https://drive.google.com/file/d/1HJFsbJ7urNxN4TNyi44j5cJFpLF7MT-k/edit 
 
 gdown.pl https://drive.google.com/file/d/1q_aPle66MYN_5xnSkZAvJBROd_lKTr1M/edit DG33_S9_L001_R2.fastq.gz
 
+fastqc DG33_S9_L001_R1.fastq.gz
+fastqc DG33_S9_L001_R2.fastq.gz
+
+cutadapt -q 20,20 -a CTGTCTCTTATACACATCTCCGAGCCCACGAGAC -A CTGTCTCTTATACACATCTGACGCTGCCGACGA -m 50 --max-n 0 -o DG33_S9_L001_R1.cutadapt.fastq -p DG33_S9_L001_R2.cutadapt.fastq DG33_S9_L001_R1.fastq.gz DG33_S9_L001_R2.fastq.gz
+
+RUN SPADES
+
+conda activate de_novo
+spades.py -k 21,51,71,91,111,127 --careful --pe1-1 DG33_S9_L001_R1.cutadapt.fastq --pe1-2 DG33_S9_L001_R2.cutadapt.fastq -o DG33_S9_L001_spades_output
+
+Now I have this spades output folder called DG33_S9_L001_spades_output
+
+cd DG33_S9_L001_spades_output
+
+Now we can run the Quast command
+
+quast contigs.fasta -o Quast_contigs
+
+
+Use WinSCP to open the .html file to examine the quality
+
 
 
 parameters used would be the spades.py -k 21,51,71,91,111,127 --careful --pe1-1 from De novo assembly 2
 if you go to the spades manual it will give you all of the parameters that we use
+
+We run spades and we specify a range of k-mers. So we can run multiple assemblies by adding numbers here. SPAdes only accepts odd k-mers. Max. k-mer size you can use in SPAdes is 127
+The numbers are numbers of k-mers. 21 is a relatively small k-mer size
+Careful means that it is going to run it slowly and be careful, it’s going to do the error correction step as careful (unlike if you say fast where it won’t look through that as careful)
+Then we are going to specify paired ends reads. We have R1 and R2 and that tells us that they are paired end which means they came from the same molecule. Pe1-1 is going to be all of my forward reads and pe1-2 is going to be all of my reverse reads
+-o specifies the output folder
+
+
+
+
 
 download angola 27
