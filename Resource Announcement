@@ -37,17 +37,14 @@ Use WinSCP to open the .html file to examine the quality
 
 
 
-parameters used would be the spades.py -k 21,51,71,91,111,127 --careful --pe1-1 from De novo assembly 2
-if you go to the spades manual it will give you all of the parameters that we use
+Parameters used for the assembler SPAdes  the spades.py -k 21,51,71,91,111,127 --careful --pe1-1 from De novo assembly 2
 
-We run spades and we specify a range of k-mers. So we can run multiple assemblies by adding numbers here. SPAdes only accepts odd k-mers. Max. k-mer size you can use in SPAdes is 127
-The numbers are numbers of k-mers. 21 is a relatively small k-mer size
-Careful means that it is going to run it slowly and be careful, it’s going to do the error correction step as careful (unlike if you say fast where it won’t look through that as careful)
+Ran spades and specified a range of k-mers, including the max k-mer size that you can use in SPAdes, which is 127.
+The numbers are numbers that appeared in the command after -k are the number of k-mers (21 being a a relatively small k-mer size)
+--careful means that it is going to run it slowly and be careful, it’s going to do the error correction step as careful (unlike if you say fast where it won’t look through that as careful)
 Then we are going to specify paired ends reads. We have R1 and R2 and that tells us that they are paired end which means they came from the same molecule. Pe1-1 is going to be all of my forward reads and pe1-2 is going to be all of my reverse reads
--o specifies the output folder
+-o specifies the output folder which was DG33_S9_L001_spades_output
 
 
 
 
-
-download angola 27
