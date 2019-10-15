@@ -37,7 +37,7 @@ Use WinSCP to open the .html file to examine the quality
 
 
 
-Parameters used for the assembler SPAdes  the spades.py -k 21,51,71,91,111,127 --careful --pe1-1 from De novo assembly 2
+Parameters used for the assembler SPAdes  the spades.py -k 21,51,71,91,111,127 --careful --pe1-1
 
 Ran spades and specified a range of k-mers, including the max k-mer size that you can use in SPAdes, which is 127.
 The numbers are numbers that appeared in the command after -k are the number of k-mers (21 being a a relatively small k-mer size)
