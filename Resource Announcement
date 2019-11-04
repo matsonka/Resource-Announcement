@@ -46,5 +46,19 @@ Then we are going to specify paired ends reads. We have R1 and R2 and that tells
 -o specifies the output folder which was DG33_S9_L001_spades_output
 
 
+Annotation
+
+conda activate annotation
+cd scratch/in_class_assignments/
+cd resource announcement/
+mkdir prokka_annotation
+cp DG33_S9_L001_spades/contigs.fasta prokka_annotation
+cd prokka_annotation
+
+Format the spades assembly to be compatable with prokka
+awk '/^>/{print ">T1_" ++i; next}{print}' < contigs.fasta > contigs_names.fasta
+
+Run the prokka pipeline on the contigs_names.fasta file
+prokka --outdir T1 --prefix T1 contigs_names.fasta
 
 
