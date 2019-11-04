@@ -62,3 +62,11 @@ Run the prokka pipeline on the contigs_names.fasta file
 prokka --outdir T1 --prefix T1 contigs_names.fasta
 
 
+Use WinSCP to open the T1.txt file to examine the prokka annotation. These are the results:
+organism: Genus species strain 
+contigs: 203
+bases: 4303924
+CDS: 4168
+rRNA: 16
+tRNA: 87
+tmRNA: 1
