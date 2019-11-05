@@ -70,3 +70,10 @@ CDS: 4168
 rRNA: 16
 tRNA: 87
 tmRNA: 1
+
+The key non-coding regions are the rRNA, tRNA, and tmRNA results from the Prokka results
+
+
+Use WinSCP to determine the number of genes from the annotation
+Also, in the prokka annotation file under T1 the T1.tsv file is what tells the number of genes from the annotation. The T1.tsv can be viewed using WinSCP
+The annotation showed that there were 2699 genes. I got this by using the cut command, then using the sed command to get rid of the blank lines, and finally using wc -l to count the genes
